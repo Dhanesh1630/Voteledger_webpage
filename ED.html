@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online Voting System</title>
+  <style>
+    /* Reset some default */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+
+    main {
+      flex: 1;
+      max-width: 450px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    main p.description {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+      color: #222;
+    }
+
+    input[type="text"], input[type="password"] {
+      padding: 0.6rem 0.9rem;
+      font-size: 1rem;
+      border: 1.8px solid #ccc;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+      border-color: #004aad;
+      outline: none;
+    }
+
+    button {
+      background-color: #004aad;
+      color: white;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 0.5rem;
+    }
+
+    button:hover {
+      background-color: #003080;
+    }
+
+    .voting-options {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .voting-options button {
+      background-color: #2a9d8f;
+    }
+
+    .voting-options button:hover {
+      background-color: #207568;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #e0e0e0;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: auto;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Online Voting System</h1>
+  </header>
+
+  <main>
+    <p class="description">
+      Welcome to the Online Voting System. Authenticate yourself using your Aadhaar and Vote Card details to securely login and cast your vote for your favorite leaders. Our platform supports public state leader elections and also offers a dedicated voting server for college elections.
+    </p>
+
+    <form id="authForm">
+      <label for="aadhaar">Aadhaar Number</label>
+      <input type="text" id="aadhaar" name="aadhaar" placeholder="Enter your Aadhaar Number" maxlength="12" required pattern="\d{12}" title="12 digit Aadhaar number" />
+
+      <label for="votecard">Vote Card Number</label>
+      <input type="text" id="votecard" name="votecard" placeholder="Enter your Vote Card Number" required />
+
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your Full Name" required />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="voting-options">
+      <button id="publicVoting">Public Voting - State Leaders</button>
+      <button id="collegeVoting">College Voting Server</button>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Online Voting System | Developed for Entrepreneurship Development Project
+  </footer>
+
+  <script>
+    // Prototype only: simple form validation feedback
+    const form = document.getElementById('authForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Authentication successful! You can now vote.');
+      // Here you can redirect to voting page or show voting interface
+    });
+
+    document.getElementById('publicVoting').addEventListener('click', () => {
+      alert('Redirecting to Public Voting of State Leaders...');
+    });
+
+    document.getElementById('collegeVoting').addEventListener('click', () => {
+      alert('Redirecting to College Voting Server...');
+    });
+  </script>
+
+</body>
+</html>
